@@ -11,11 +11,11 @@ import CoreLocation
 
 class Route: NSObject {
     var estTime: String?
-    let start: String?
+    let start: CLLocation?
     let destination: CLLocation?
     let path: String?
     
-    init(start: String, destination: CLLocation, estTime: String, path: String){
+    init(start: CLLocation, destination: CLLocation, estTime: String, path: String){
         self.start = start
         self.destination = destination
         self.estTime = estTime
