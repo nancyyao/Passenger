@@ -15,27 +15,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var vwGMap = GMSMapView()
     
+    let originButton = UIButton(frame: CGRect(x: 20, y: 80, width: 330, height: 40))
+    let destButton = UIButton(frame: CGRect(x: 20, y: 140, width: 330, height: 40))
+    var origin: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
         let vwGMap = GMSMapView.map(withFrame: .zero, camera: camera)
-        
+        vwGMap.isMyLocationEnabled = true
         self.view = vwGMap
+        if vwGMap.myLocation != nil {
+            
+        }
         
         // Origin Button
-        let originButton = UIButton(frame: CGRect(x: 20, y: 90, width: 70, height: 40))
-        originButton.backgroundColor = UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
-        originButton.setTitle("Origin", for: .normal)
-        originButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 17)
+        originButton.backgroundColor = UIColor.init(white: 0.7, alpha: 0.65)
+        originButton.titleLabel?.textColor = UIColor.init(white: 0.5, alpha: 0.5)
+        originButton.setTitle("Enter Starting Point...", for: .normal)
+        originButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 18)
         originButton.addTarget(self, action: #selector(onOriginTap), for: .touchUpInside)
         self.view.addSubview(originButton)
         
         // Destination Button
-        let destButton = UIButton(frame: CGRect(x: 20, y: 140, width: 120, height: 40))
-        destButton.backgroundColor = UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
-        destButton.setTitle("Destination", for: .normal)
-        destButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 17)
+        destButton.backgroundColor = UIColor.init(white: 0.7, alpha: 0.65)
+        destButton.titleLabel?.textColor = UIColor.init(white: 0.5, alpha: 0.5)
+        destButton.setTitle("Enter Destination...", for: .normal)
+        destButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 18)
         destButton.addTarget(self, action: #selector(onDestinationTap(_:)), for: .touchUpInside)
         self.view.addSubview(destButton)
         
@@ -47,7 +54,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 500
         
         // Request permission to use location service
-        locationManager.requestWhenInUseAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
         
         // Request permission to use location service when the app is run
         locationManager.requestAlwaysAuthorization()
@@ -61,15 +68,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     // Present the Autocomplete view controller when the button is pressed.
     @IBAction func onOriginTap(_ sender: UIButton) {
+        origin = true
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         self.present(autocompleteController, animated: true, completion: nil)
-        
-        //create a label
-        
     }
     
     @IBAction func onDestinationTap(_ sender: UIButton) {
+        origin = false
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         self.present(autocompleteController, animated: true, completion: nil)
@@ -84,6 +90,13 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         print("Place attributions: ", place.attributions)
         print("Place coordinates (CLLocationCoordinate2D)", place.coordinate)
         //save in Route object as origin or destination!
+        if (origin == true) {
+            originButton.setTitle(place.name, for: UIControlState.normal)
+            originButton.titleLabel?.textColor = UIColor.black
+        } else {
+            destButton.setTitle(place.name, for: UIControlState.normal)
+            destButton.titleLabel?.textColor = UIColor.black
+        }
         
         //mark point in Map
         let position = place.coordinate

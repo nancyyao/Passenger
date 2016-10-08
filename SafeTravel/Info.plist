@@ -42,6 +42,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseAuthorization</key>
-	<string>Test</string>
+	<string>0</string>
+	<key>NSLocationAlwaysAuthorization</key>
+	<string>hello</string>
 </dict>
 </plist>
