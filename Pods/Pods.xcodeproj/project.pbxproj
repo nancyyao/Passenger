@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1973DD712CB1B09CFD4548DF8811527D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		2D296ABD4EC2A8B849EDE0B937EC77A5 /* Pods-SafeTravelUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F43700739732B68215070E6D127C481 /* Pods-SafeTravelUITests-dummy.m */; };
+		5C4FAC767EE22F9AE7B5DBA36B4846AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		76AAC66BF99DE393CA69A1F8DC6DF85F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		7D6A9BA7C4684AB2FC5D74AB49AD8413 /* Pods-SafeTravel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9409DB75811850BAC403F36C216AB6EA /* Pods-SafeTravel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		871FE0011428E882963BC934355F0541 /* Pods-SafeTravelTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E42D7A0216B1EE1ACA3CC68F3B3BC696 /* Pods-SafeTravelTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6DA8B914D9DA7478E47151694613DD8 /* Pods-SafeTravel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F608117D9D965B743274FD54ED7AC644 /* Pods-SafeTravel-dummy.m */; };
+		D779A3EABDCF9C5F9E092DCAA4E38FB2 /* Pods-SafeTravelUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C050107CFC40AB50B9AF1DA38AEF7E80 /* Pods-SafeTravelUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC13730B20756550FBEF0454BACAE0CC /* Pods-SafeTravelTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E1C68C021A358E0D9B493FFF18AF0 /* Pods-SafeTravelTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03B3C0D315EDA167D65BF779800DAFD8 /* Pods-SafeTravelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravelUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		05369E23ADE00E738C8EAE3658B9DC8B /* Pods-SafeTravelUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravelUITests-resources.sh"; sourceTree = "<group>"; };
+		06DC7059B02B7946992529A6B777DB74 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Subspecs/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		06EE51B0F28EAF2037818FAC475420D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AE1759EF2610CC6238F887417B4EA7F /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Subspecs/Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		12E81DDDD9C5B4C289220C5345AF2906 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		184A614628BCA91DC4681E987730DE3F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CEF53D71032200B6F9D7F8702CA9C00 /* Pods-SafeTravelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravelUITests.release.xcconfig"; sourceTree = "<group>"; };
+		29CF48E6B15CF321D032ACE24087956E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Subspecs/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		2F43700739732B68215070E6D127C481 /* Pods-SafeTravelUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SafeTravelUITests-dummy.m"; sourceTree = "<group>"; };
+		2FE7C02A231E7CA2A0D64458BC69FA47 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		35021556B74B3CD37B30298CD4DC7983 /* Pods-SafeTravelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		36D6A9D792A6C30D803B1C886AE6C981 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		3924B14E75B43292943745BBCAE20D9D /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		3BDB12971D0651D1C8B21688FF9ED281 /* Pods-SafeTravel-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SafeTravel-acknowledgements.markdown"; sourceTree = "<group>"; };
+		40803C4787BEA559FDF589C448D4E6F6 /* Pods-SafeTravelTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SafeTravelTests.modulemap"; sourceTree = "<group>"; };
+		42B26654F9BDD59E09DCA0AD728C6573 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		4586ED2A096C839FE278BD82565086E8 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		46FF28560867D104360168FE748DC18C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		4AB34ACB489456777779A3D0433BFF9F /* Pods-SafeTravelTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SafeTravelTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		4B5BCB2C980D7FBC6D4E7C43C05BB896 /* Pods-SafeTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravel.release.xcconfig"; sourceTree = "<group>"; };
+		4F40137CCFCD8C55FE724835C1D8EC00 /* Pods-SafeTravelUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SafeTravelUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50FA769D5A5D04D318BE2B7444276188 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		688E5BA6AF98B96A6A92CF866591E31D /* Pods-SafeTravel-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravel-resources.sh"; sourceTree = "<group>"; };
+		6CE51B05D4A426C516AD88CEDDB152EB /* Pods-SafeTravelTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravelTests-frameworks.sh"; sourceTree = "<group>"; };
+		794FFE5F8843E0EC5140C26C2CFAB7A2 /* Pods_SafeTravelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2830895E2BE6AAD8C2A3362CFB64FD /* Pods-SafeTravelUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SafeTravelUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		804EF6BBB0C70389911437E1C55AB643 /* Pods-SafeTravel-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SafeTravel-acknowledgements.plist"; sourceTree = "<group>"; };
+		83A9DA62E1AE84E67702D480DE58397A /* Pods_SafeTravelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8772666CD4E5D7BE3CD5104417323145 /* Pods-SafeTravelUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravelUITests-frameworks.sh"; sourceTree = "<group>"; };
+		8D305249C22FC13817E84ACFCB1129DF /* Pods-SafeTravelTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravelTests-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9409DB75811850BAC403F36C216AB6EA /* Pods-SafeTravel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SafeTravel-umbrella.h"; sourceTree = "<group>"; };
+		9A37092322A152DA96D5DC3AF9F80B80 /* Pods-SafeTravel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SafeTravel.modulemap"; sourceTree = "<group>"; };
+		9E2A5DD2622D089D984D186EFED2B3C5 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		A43B64B54AFA592FDD0F0F396B5F93E3 /* Pods_SafeTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A796328FB0C11C35B37FD42AE77B1F68 /* Pods-SafeTravelUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SafeTravelUITests.modulemap"; sourceTree = "<group>"; };
+		AB3C10A964784B4B5C856D439B5BE34B /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		B119B56149F0C46619DEB9267CF377F6 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		B520446FC22623C29CABD5F85B7CA6DA /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		B9CC331064A9A77C6788F6993CDDD306 /* Pods-SafeTravel-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SafeTravel-frameworks.sh"; sourceTree = "<group>"; };
+		BF2E1C68C021A358E0D9B493FFF18AF0 /* Pods-SafeTravelTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SafeTravelTests-dummy.m"; sourceTree = "<group>"; };
+		C050107CFC40AB50B9AF1DA38AEF7E80 /* Pods-SafeTravelUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SafeTravelUITests-umbrella.h"; sourceTree = "<group>"; };
+		C3FF8A774A4BF502AF8DFB195E2B67EF /* Pods-SafeTravelTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SafeTravelTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF8990EA74445A3418655C5D777221D8 /* Pods-SafeTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravelTests.release.xcconfig"; sourceTree = "<group>"; };
+		D3B8B9603742D1FCE245F1CBD937CEAC /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		DEBC8EF260CAF01213613CE5A1E028CB /* Pods-SafeTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SafeTravel.debug.xcconfig"; sourceTree = "<group>"; };
+		E42D7A0216B1EE1ACA3CC68F3B3BC696 /* Pods-SafeTravelTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SafeTravelTests-umbrella.h"; sourceTree = "<group>"; };
+		F608117D9D965B743274FD54ED7AC644 /* Pods-SafeTravel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SafeTravel-dummy.m"; sourceTree = "<group>"; };
+		FA16B30F2AD0B71BC7FB7988660D4FAD /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1747285C6FAEFD7F15DBF5529F38A78F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4FAC767EE22F9AE7B5DBA36B4846AC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DDD848C94A56E4805EE2841420AFE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AAC66BF99DE393CA69A1F8DC6DF85F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB37AE6634E06C83982871C87EBF006E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1973DD712CB1B09CFD4548DF8811527D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0042619BC22A3B13CF7C59952989D6A0 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				BB4D7CBA62F5CADA84535E05C2144AB6 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		007D711C71054314E8DCAD47305B2D71 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C10A964784B4B5C856D439B5BE34B /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		05B5DBD3F233C4485D7567C8DF38BAD9 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				9E974243ACA3AA07C797E17A39596241 /* Base */,
+				756E3581F493916199B5C90FC153D43F /* Maps */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		1672CB60338BE2DEE5AA8240EED5D6CB /* Pods-SafeTravelTests */ = {
+			isa = PBXGroup;
+			children = (
+				06EE51B0F28EAF2037818FAC475420D3 /* Info.plist */,
+				40803C4787BEA559FDF589C448D4E6F6 /* Pods-SafeTravelTests.modulemap */,
+				C3FF8A774A4BF502AF8DFB195E2B67EF /* Pods-SafeTravelTests-acknowledgements.markdown */,
+				4AB34ACB489456777779A3D0433BFF9F /* Pods-SafeTravelTests-acknowledgements.plist */,
+				BF2E1C68C021A358E0D9B493FFF18AF0 /* Pods-SafeTravelTests-dummy.m */,
+				6CE51B05D4A426C516AD88CEDDB152EB /* Pods-SafeTravelTests-frameworks.sh */,
+				8D305249C22FC13817E84ACFCB1129DF /* Pods-SafeTravelTests-resources.sh */,
+				E42D7A0216B1EE1ACA3CC68F3B3BC696 /* Pods-SafeTravelTests-umbrella.h */,
+				35021556B74B3CD37B30298CD4DC7983 /* Pods-SafeTravelTests.debug.xcconfig */,
+				CF8990EA74445A3418655C5D777221D8 /* Pods-SafeTravelTests.release.xcconfig */,
+			);
+			name = "Pods-SafeTravelTests";
+			path = "Target Support Files/Pods-SafeTravelTests";
+			sourceTree = "<group>";
+		};
+		1BB956C1445B29E824B1C4716B18F362 /* Pods-SafeTravel */ = {
+			isa = PBXGroup;
+			children = (
+				12E81DDDD9C5B4C289220C5345AF2906 /* Info.plist */,
+				9A37092322A152DA96D5DC3AF9F80B80 /* Pods-SafeTravel.modulemap */,
+				3BDB12971D0651D1C8B21688FF9ED281 /* Pods-SafeTravel-acknowledgements.markdown */,
+				804EF6BBB0C70389911437E1C55AB643 /* Pods-SafeTravel-acknowledgements.plist */,
+				F608117D9D965B743274FD54ED7AC644 /* Pods-SafeTravel-dummy.m */,
+				B9CC331064A9A77C6788F6993CDDD306 /* Pods-SafeTravel-frameworks.sh */,
+				688E5BA6AF98B96A6A92CF866591E31D /* Pods-SafeTravel-resources.sh */,
+				9409DB75811850BAC403F36C216AB6EA /* Pods-SafeTravel-umbrella.h */,
+				DEBC8EF260CAF01213613CE5A1E028CB /* Pods-SafeTravel.debug.xcconfig */,
+				4B5BCB2C980D7FBC6D4E7C43C05BB896 /* Pods-SafeTravel.release.xcconfig */,
+			);
+			name = "Pods-SafeTravel";
+			path = "Target Support Files/Pods-SafeTravel";
+			sourceTree = "<group>";
+		};
+		1BD0B29E99BB977A190C6F76D7953327 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06DC7059B02B7946992529A6B777DB74 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D6628B21BF6E7A31EE61BE81A9DF603 /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				C8AD48CD0F4C1A5FF29C1171E207B71F /* Frameworks */,
+			);
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		257F4A0BFF0A3901A406BE76E57C064C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD16C83090E26A232BCE29C23F131BF7 /* Firebase */,
+				9179F8EAD29AD08BAB0D2FF2FED83726 /* FirebaseAnalytics */,
+				FB6096BFA2783E74AF980F0BA6B4333D /* FirebaseAuth */,
+				1D6628B21BF6E7A31EE61BE81A9DF603 /* FirebaseCore */,
+				8CD07A1E2D70842D2F0EBFD6D56A1D78 /* FirebaseInstanceID */,
+				39F64D43EFE59E23E971962DBF6F6DAC /* GoogleInterchangeUtilities */,
+				05B5DBD3F233C4485D7567C8DF38BAD9 /* GoogleMaps */,
+				41AA245074D20AF949A660E453A024F4 /* GoogleNetworkingUtilities */,
+				7F9C10653667465886C33ADE0A4B1E2A /* GooglePlaces */,
+				0042619BC22A3B13CF7C59952989D6A0 /* GoogleSymbolUtilities */,
+				7F285EC1A5D51E01C8E3125876B6B01D /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		39F64D43EFE59E23E971962DBF6F6DAC /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				84AF4B8BB1B51A199C0D4DDFB4D85829 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		41AA245074D20AF949A660E453A024F4 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				880B563917AE39922049DF65E69472A6 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		56D2A2649CFC9725389660DB340D4529 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				36D6A9D792A6C30D803B1C886AE6C981 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		756E3581F493916199B5C90FC153D43F /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				E98B343EA0D5385E1AC5D67E7A3219D0 /* Frameworks */,
+				E1B9C5933D711B4A8953FD44184AF050 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				257F4A0BFF0A3901A406BE76E57C064C /* Pods */,
+				D910E007285470D5214D658109129B90 /* Products */,
+				80DAFE627915DE3C6F35CEA548839196 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F285EC1A5D51E01C8E3125876B6B01D /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				BA2F9BE28310642352E7C5D6D567A36C /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		7F9C10653667465886C33ADE0A4B1E2A /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				D2D28E3CED316777744C4763A59B50DF /* Frameworks */,
+				56D2A2649CFC9725389660DB340D4529 /* Resources */,
+			);
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		80DAFE627915DE3C6F35CEA548839196 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BB956C1445B29E824B1C4716B18F362 /* Pods-SafeTravel */,
+				1672CB60338BE2DEE5AA8240EED5D6CB /* Pods-SafeTravelTests */,
+				D8FA32C632A9ECE67C1601C491A3BA70 /* Pods-SafeTravelUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		84AF4B8BB1B51A199C0D4DDFB4D85829 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA16B30F2AD0B71BC7FB7988660D4FAD /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84C91C2E8E641BF1EA1C77605D12307B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46FF28560867D104360168FE748DC18C /* FirebaseAuth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		880B563917AE39922049DF65E69472A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3B8B9603742D1FCE245F1CBD937CEAC /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CD07A1E2D70842D2F0EBFD6D56A1D78 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				B119B56149F0C46619DEB9267CF377F6 /* FIRInstanceID.h */,
+				FB0CB5F938FDB050B7A27F3A831A23F9 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		9179F8EAD29AD08BAB0D2FF2FED83726 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				984F077C4375C08D97274FFDA584E436 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		984F077C4375C08D97274FFDA584E436 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7C02A231E7CA2A0D64458BC69FA47 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E974243ACA3AA07C797E17A39596241 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1BD0B29E99BB977A190C6F76D7953327 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		BA2F9BE28310642352E7C5D6D567A36C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E2A5DD2622D089D984D186EFED2B3C5 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB4D7CBA62F5CADA84535E05C2144AB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B520446FC22623C29CABD5F85B7CA6DA /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8AD48CD0F4C1A5FF29C1171E207B71F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42B26654F9BDD59E09DCA0AD728C6573 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD16C83090E26A232BCE29C23F131BF7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				007D711C71054314E8DCAD47305B2D71 /* Core */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		D2D28E3CED316777744C4763A59B50DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50FA769D5A5D04D318BE2B7444276188 /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8FA32C632A9ECE67C1601C491A3BA70 /* Pods-SafeTravelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				184A614628BCA91DC4681E987730DE3F /* Info.plist */,
+				A796328FB0C11C35B37FD42AE77B1F68 /* Pods-SafeTravelUITests.modulemap */,
+				4F40137CCFCD8C55FE724835C1D8EC00 /* Pods-SafeTravelUITests-acknowledgements.markdown */,
+				7B2830895E2BE6AAD8C2A3362CFB64FD /* Pods-SafeTravelUITests-acknowledgements.plist */,
+				2F43700739732B68215070E6D127C481 /* Pods-SafeTravelUITests-dummy.m */,
+				8772666CD4E5D7BE3CD5104417323145 /* Pods-SafeTravelUITests-frameworks.sh */,
+				05369E23ADE00E738C8EAE3658B9DC8B /* Pods-SafeTravelUITests-resources.sh */,
+				C050107CFC40AB50B9AF1DA38AEF7E80 /* Pods-SafeTravelUITests-umbrella.h */,
+				03B3C0D315EDA167D65BF779800DAFD8 /* Pods-SafeTravelUITests.debug.xcconfig */,
+				1CEF53D71032200B6F9D7F8702CA9C00 /* Pods-SafeTravelUITests.release.xcconfig */,
+			);
+			name = "Pods-SafeTravelUITests";
+			path = "Target Support Files/Pods-SafeTravelUITests";
+			sourceTree = "<group>";
+		};
+		D910E007285470D5214D658109129B90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A43B64B54AFA592FDD0F0F396B5F93E3 /* Pods_SafeTravel.framework */,
+				794FFE5F8843E0EC5140C26C2CFAB7A2 /* Pods_SafeTravelTests.framework */,
+				83A9DA62E1AE84E67702D480DE58397A /* Pods_SafeTravelUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1B9C5933D711B4A8953FD44184AF050 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4586ED2A096C839FE278BD82565086E8 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E98B343EA0D5385E1AC5D67E7A3219D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29CF48E6B15CF321D032ACE24087956E /* GoogleMaps.framework */,
+				0AE1759EF2610CC6238F887417B4EA7F /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB0CB5F938FDB050B7A27F3A831A23F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3924B14E75B43292943745BBCAE20D9D /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB6096BFA2783E74AF980F0BA6B4333D /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				84C91C2E8E641BF1EA1C77605D12307B /* Frameworks */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		53C1D8582636B9F475A9B01446179B63 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D779A3EABDCF9C5F9E092DCAA4E38FB2 /* Pods-SafeTravelUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F10C4939ED10986E27C9118A5BAD24B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6A9BA7C4684AB2FC5D74AB49AD8413 /* Pods-SafeTravel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9096909D164A2BB26F20E979C8A9C70 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871FE0011428E882963BC934355F0541 /* Pods-SafeTravelTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2DF485312868E94479A19200B28FFCC8 /* Pods-SafeTravelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1FBF14E45FE68C87B8E565D330F8F0B /* Build configuration list for PBXNativeTarget "Pods-SafeTravelUITests" */;
+			buildPhases = (
+				3011F4F611535130EE8ABA6F95782B29 /* Sources */,
+				26DDD848C94A56E4805EE2841420AFE1 /* Frameworks */,
+				53C1D8582636B9F475A9B01446179B63 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SafeTravelUITests";
+			productName = "Pods-SafeTravelUITests";
+			productReference = 83A9DA62E1AE84E67702D480DE58397A /* Pods_SafeTravelUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8DA8331A619F87D87295E9DFBC53A863 /* Pods-SafeTravelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BEDD9EE35B5C815701FDC2B4EADA002 /* Build configuration list for PBXNativeTarget "Pods-SafeTravelTests" */;
+			buildPhases = (
+				7CC02965533B1B1D434B7C0191FD3782 /* Sources */,
+				BB37AE6634E06C83982871C87EBF006E /* Frameworks */,
+				F9096909D164A2BB26F20E979C8A9C70 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SafeTravelTests";
+			productName = "Pods-SafeTravelTests";
+			productReference = 794FFE5F8843E0EC5140C26C2CFAB7A2 /* Pods_SafeTravelTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED39748CBE30C30F87A87798BBB1B497 /* Pods-SafeTravel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 474A843F45D589108C02DE355FDC3859 /* Build configuration list for PBXNativeTarget "Pods-SafeTravel" */;
+			buildPhases = (
+				ACB53E01F4FC21ADCF44B5A273AD6B7B /* Sources */,
+				1747285C6FAEFD7F15DBF5529F38A78F /* Frameworks */,
+				7F10C4939ED10986E27C9118A5BAD24B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SafeTravel";
+			productName = "Pods-SafeTravel";
+			productReference = A43B64B54AFA592FDD0F0F396B5F93E3 /* Pods_SafeTravel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D910E007285470D5214D658109129B90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED39748CBE30C30F87A87798BBB1B497 /* Pods-SafeTravel */,
+				8DA8331A619F87D87295E9DFBC53A863 /* Pods-SafeTravelTests */,
+				2DF485312868E94479A19200B28FFCC8 /* Pods-SafeTravelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3011F4F611535130EE8ABA6F95782B29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D296ABD4EC2A8B849EDE0B937EC77A5 /* Pods-SafeTravelUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CC02965533B1B1D434B7C0191FD3782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC13730B20756550FBEF0454BACAE0CC /* Pods-SafeTravelTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACB53E01F4FC21ADCF44B5A273AD6B7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DA8B914D9DA7478E47151694613DD8 /* Pods-SafeTravel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3F6FF10B5FDE5F269FD95581F896D365 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B3C0D315EDA167D65BF779800DAFD8 /* Pods-SafeTravelUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravelUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravelUITests/Pods-SafeTravelUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravelUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		42287DDF97330524BA3EF220F0276DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		456954A781F6B15B3D98E7E7894DD95C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CEF53D71032200B6F9D7F8702CA9C00 /* Pods-SafeTravelUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravelUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravelUITests/Pods-SafeTravelUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravelUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		74EE7ED1BE15159C74FD6508C676AC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5BCB2C980D7FBC6D4E7C43C05BB896 /* Pods-SafeTravel.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravel/Pods-SafeTravel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A078C11BE76704CFE9A72084F6831B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35021556B74B3CD37B30298CD4DC7983 /* Pods-SafeTravelTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravelTests/Pods-SafeTravelTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravelTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE9439C22469D35336242DD983DB5C5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C73F66F8B5191D6BD3F72B79FB43D406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEBC8EF260CAF01213613CE5A1E028CB /* Pods-SafeTravel.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravel/Pods-SafeTravel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDB414003FC66C0E4F1AFFBC249AC613 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8990EA74445A3418655C5D777221D8 /* Pods-SafeTravelTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SafeTravelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SafeTravelTests/Pods-SafeTravelTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SafeTravelTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BEDD9EE35B5C815701FDC2B4EADA002 /* Build configuration list for PBXNativeTarget "Pods-SafeTravelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A078C11BE76704CFE9A72084F6831B17 /* Debug */,
+				CDB414003FC66C0E4F1AFFBC249AC613 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9439C22469D35336242DD983DB5C5F /* Debug */,
+				42287DDF97330524BA3EF220F0276DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		474A843F45D589108C02DE355FDC3859 /* Build configuration list for PBXNativeTarget "Pods-SafeTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C73F66F8B5191D6BD3F72B79FB43D406 /* Debug */,
+				74EE7ED1BE15159C74FD6508C676AC43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1FBF14E45FE68C87B8E565D330F8F0B /* Build configuration list for PBXNativeTarget "Pods-SafeTravelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6FF10B5FDE5F269FD95581F896D365 /* Debug */,
+				456954A781F6B15B3D98E7E7894DD95C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

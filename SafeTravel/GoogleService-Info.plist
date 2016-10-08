@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>460801288149-5kvllr1gq4h74n5v2l2ejfunpgcvr24q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.460801288149-5kvllr1gq4h74n5v2l2ejfunpgcvr24q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNcCVOdJrfJOt69oWY_y2TM0dgVsZRZ7k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>460801288149</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mhacks8.SafeTravel</string>
+	<key>PROJECT_ID</key>
+	<string>staywithme-3fe0a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>staywithme-3fe0a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:460801288149:ios:0ccf1cea82be6f18</string>
+	<key>DATABASE_URL</key>
+	<string>https://staywithme-3fe0a.firebaseio.com</string>
+</dict>
+</plist>

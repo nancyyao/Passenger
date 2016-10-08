@@ -8,14 +8,29 @@
 
 import UIKit
 
+import Firebase
+import GoogleMaps
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()
+        
+        //Check if user is logged in
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in. FIRAuth.auth().currentUser
+            } else {
+                // No user is signed in. currentUser is nil.
+            }
+        }
+        
+        //Google Maps
+ //       GMSServices.provideAPIKey("AIzaSyADELAZuUUzXSHEhbTHr1yKT77ZHFZd8Kc")
         return true
     }
 
