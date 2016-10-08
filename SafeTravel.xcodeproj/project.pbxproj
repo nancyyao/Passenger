@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50B2A1816B1DAB13E83EEC1C /* Pods_SafeTravelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E419C90263FCDF371955DA72 /* Pods_SafeTravelTests.framework */; };
+		909B7B461DA90B61004D6C94 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909B7B451DA90B61004D6C94 /* MapViewController.swift */; };
 		9BC0761EBECA7D6E2D26435D /* Pods_SafeTravelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */; };
 		A8A94ECEFA4BC104AE554EBF /* Pods_SafeTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D759A5085ECD0D9F73C4C310 /* Pods_SafeTravel.framework */; };
 		B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		2CE8F1A980BBE0AFA4C82995 /* Pods-SafeTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeTravel/Pods-SafeTravel.release.xcconfig"; sourceTree = "<group>"; };
 		6779F71ED7D6B3201C33F69F /* Pods-SafeTravelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeTravelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeTravelTests/Pods-SafeTravelTests.release.xcconfig"; sourceTree = "<group>"; };
 		8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		909B7B451DA90B61004D6C94 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B9F1612A1DA905FE00322ED6 /* SafeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F161321DA905FE00322ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F1615C1DA9061F00322ED6 /* LoginViewController.swift */,
+				909B7B451DA90B61004D6C94 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F1615D1DA9061F00322ED6 /* LoginViewController.swift in Sources */,
+				909B7B461DA90B61004D6C94 /* MapViewController.swift in Sources */,
 				B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

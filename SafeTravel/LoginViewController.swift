@@ -45,12 +45,15 @@ class LoginViewController: UIViewController {
     // Sign up
     func signUp(email: String, password: String) {
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-            if (error == nil) {
-                print("User signed up successfully");
-                //do something with user
-            } else {
+            if (error != nil) {
                 print("Error with signUp:", error)
                 self.alert(title: "Alert:", message: "Error signing up, please try again")
+                print("User signed up successfully")
+                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+            } else {
+                print("User signed up successfully")
+                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                //do something with user
             }
         }
     }
@@ -63,12 +66,13 @@ class LoginViewController: UIViewController {
     // Log in
     func logIn(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
-            if (error == nil) {
-                print("User logged in successfully");
-                //do something with user
-            } else {
+            if (error != nil) {
                 print("Error with logIn:", error)
                 self.alert(title: "Alert:", message: "Error logging in, please try again")
+            } else {
+                print("User logged in successfully")
+                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                //do something with user
             }
         }
     }
