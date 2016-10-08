@@ -45,5 +45,7 @@
 	<string>0</string>
 	<key>NSLocationAlwaysAuthorization</key>
 	<string>hello</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For your safety!</string>
 </dict>
 </plist>

@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+import Firebase
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
@@ -27,8 +28,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         vwGMap.isMyLocationEnabled = true
         self.view = vwGMap
         if vwGMap.myLocation != nil {
+            let initialLoc = vwGMap.myLocation as CLLocation!
+//            vwGMap.animate(toLocation: (initialLoc?.coordinate)!)
+            vwGMap.animate(to: <#T##GMSCameraPosition#>)
+            print("ANIMATED")
             
         }
+        // Logout Button
+        
+        
+
+        
+        let logoutButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 100))
+        logoutButton.setTitle("Log Out", for: .normal)
+        logoutButton.backgroundColor = UIColor.blue
+        logoutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+        self.view.addSubview(logoutButton)
+    
         
         // Origin Button
         originButton.backgroundColor = UIColor.init(white: 0.7, alpha: 0.65)
@@ -64,6 +80,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         // Add GMSMapView to current view
         
+    }
+    // Sign out
+    func signOut(_ sender: UIButton) {
+        try! FIRAuth.auth()!.signOut()
+        self.performSegue(withIdentifier: "LogOut", sender: nil)
     }
     
     // Present the Autocomplete view controller when the button is pressed.
