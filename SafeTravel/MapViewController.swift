@@ -13,38 +13,53 @@ import CoreLocation
 import Firebase
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
+    let messageComposer = MessageComposer()
+    
     var locationManager = CLLocationManager()
     var vwGMap = GMSMapView()
     
     let originButton = UIButton(frame: CGRect(x: 20, y: 80, width: 330, height: 40))
     let destButton = UIButton(frame: CGRect(x: 20, y: 140, width: 330, height: 40))
     var origin: Bool?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        // A minimum distance a device must move before update event generated
+        locationManager.distanceFilter = 500
+        // Request permission to use location service when the app is run
+        locationManager.requestAlwaysAuthorization()
+        // Start the update of user's location
+        locationManager.startUpdatingLocation()
+        
         
         let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
         let vwGMap = GMSMapView.map(withFrame: .zero, camera: camera)
         vwGMap.isMyLocationEnabled = true
         self.view = vwGMap
         if vwGMap.myLocation != nil {
+            print("my location is not nil")
             let initialLoc = vwGMap.myLocation as CLLocation!
-//            vwGMap.animate(toLocation: (initialLoc?.coordinate)!)
-            vwGMap.animate(to: <#T##GMSCameraPosition#>)
+            vwGMap.animate(to: GMSCameraPosition.init(target: (initialLoc?.coordinate)!, zoom: 14, bearing: 0, viewingAngle: 0))
             print("ANIMATED")
             
         }
+        //Text/Start trip Button
+        let textButton = UIButton(frame: CGRect(x: 200, y: 500, width: 100, height: 100))
+        textButton.setTitle("Send Message", for: .normal)
+        textButton.backgroundColor = UIColor.green
+        textButton.addTarget(self, action: #selector(onSendText), for: .touchUpInside)
+        self.view.addSubview(textButton)
+        
         // Logout Button
-        
-        
-
-        
         let logoutButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 100))
         logoutButton.setTitle("Log Out", for: .normal)
         logoutButton.backgroundColor = UIColor.blue
         logoutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         self.view.addSubview(logoutButton)
-    
+        
         
         // Origin Button
         originButton.backgroundColor = UIColor.init(white: 0.7, alpha: 0.65)
@@ -63,24 +78,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         self.view.addSubview(destButton)
         
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         
-        // A minimum distance a device must move before update event generated
-        locationManager.distanceFilter = 500
-        
-        // Request permission to use location service
-//        locationManager.requestWhenInUseAuthorization()
-        
-        // Request permission to use location service when the app is run
-        locationManager.requestAlwaysAuthorization()
-        
-        // Start the update of user's location
-        locationManager.startUpdatingLocation()
-        
-        // Add GMSMapView to current view
         
     }
+    // SEND TEXT MESSAGES
+    func onSendText(_ sender:UIButton) {
+        // Make sure the device can send text messages
+        if (messageComposer.canSendText()) {
+            // Obtain a configured MFMessageComposeViewController
+            let messageComposeVC = messageComposer.configuredMessageComposeViewController()
+            
+            // Present the configured MFMessageComposeViewController instance
+            // Note that the dismissal of the VC will be handled by the messageComposer instance,
+            // since it implements the appropriate delegate call-back
+            present(messageComposeVC, animated: true, completion: nil)
+        } else {
+            // Let the user know if his/her device isn't able to send text messages
+            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
+            errorAlert.show()
+        }
+    }
+    
     // Sign out
     func signOut(_ sender: UIButton) {
         try! FIRAuth.auth()!.signOut()

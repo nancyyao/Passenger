@@ -20,6 +20,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAuthorization</key>
+	<string>hello</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>For your safety!</string>
+	<key>NSLocationWhenInUseAuthorization</key>
+	<string>0</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,11 +51,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseAuthorization</key>
-	<string>0</string>
-	<key>NSLocationAlwaysAuthorization</key>
-	<string>hello</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>For your safety!</string>
 </dict>
 </plist>

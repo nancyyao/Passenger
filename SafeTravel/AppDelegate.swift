@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
+        //Google Maps
+        GMSServices.provideAPIKey("AIzaSyALc9iUwdXuTMmvXm7Gjrms4uoRQuSvw7g")
+        GMSPlacesClient.provideAPIKey("AIzaSyB2UrwI4WqdbWEW3dUPL7uRqK-EfFS_Mmo")
         //Check if user is logged in
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {
@@ -37,9 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // No user is signed in. currentUser is nil.
             }
         }
-        //Google Maps
-        GMSServices.provideAPIKey("AIzaSyALc9iUwdXuTMmvXm7Gjrms4uoRQuSvw7g")
-        GMSPlacesClient.provideAPIKey("AIzaSyB2UrwI4WqdbWEW3dUPL7uRqK-EfFS_Mmo")
+
         
 
         }
