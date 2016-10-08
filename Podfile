@@ -14,6 +14,7 @@ target 'SafeTravel' do
 pod ‘GoogleMaps’
 pod ‘GooglePlaces’
 pod ‘GooglePlacePicker’
+pod ‘AFNetworking’
 
   target 'SafeTravelTests' do
     inherit! :search_paths
