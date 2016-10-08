@@ -12,12 +12,32 @@ import GooglePlaces
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
+    var locationManager = CLLocationManager()
+    var vwGMap = GMSMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let camera = GMSCameraPosition.camera(withLatitude: 1.285, longitude: 103.848, zoom: 12)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
-        self.view = mapView
+        let vwGMap = GMSMapView.map(withFrame: .zero, camera: camera)
+        
+        self.view = vwGMap
+        
+        // Origin Button
+        let originButton = UIButton(frame: CGRect(x: 20, y: 90, width: 70, height: 40))
+        originButton.backgroundColor = UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
+        originButton.setTitle("Origin", for: .normal)
+        originButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 17)
+        originButton.addTarget(self, action: #selector(onOriginTap), for: .touchUpInside)
+        self.view.addSubview(originButton)
+        
+        // Destination Button
+        let destButton = UIButton(frame: CGRect(x: 20, y: 140, width: 120, height: 40))
+        destButton.backgroundColor = UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
+        destButton.setTitle("Destination", for: .normal)
+        destButton.titleLabel!.font = UIFont(name: "Apple SD Gothic Neo", size: 17)
+        destButton.addTarget(self, action: #selector(onDestinationTap(_:)), for: .touchUpInside)
+        self.view.addSubview(destButton)
         
         
         locationManager.delegate = self
@@ -36,19 +56,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         // Add GMSMapView to current view
-        self.view = vwGMap
+        
     }
-    var locationManager = CLLocationManager()
-    var vwGMap = GMSMapView()
-    
     
     // Present the Autocomplete view controller when the button is pressed.
-    @IBAction func originClicked(sender: AnyObject) {
+    @IBAction func onOriginTap(_ sender: UIButton) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         self.present(autocompleteController, animated: true, completion: nil)
+        
+        //create a label
+        
     }
-    @IBAction func destinationClicked(sender: AnyObject) {
+    
+    @IBAction func onDestinationTap(_ sender: UIButton) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         self.present(autocompleteController, animated: true, completion: nil)

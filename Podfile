@@ -11,10 +11,11 @@ target 'SafeTravel' do
   # Pods for SafeTravel
   pod 'Firebase/Core'
   pod 'Firebase/Auth’
-pod ‘GoogleMaps’
-pod ‘GooglePlaces’
-pod ‘GooglePlacePicker’
-pod ‘AFNetworking’
+  pod ‘Firebase/Messaging’
+  pod ‘GoogleMaps’
+  pod ‘GooglePlaces’
+  pod ‘GooglePlacePicker’
+  pod ‘AFNetworking’
 
   target 'SafeTravelTests' do
     inherit! :search_paths

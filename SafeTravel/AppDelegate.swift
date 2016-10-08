@@ -32,6 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyALc9iUwdXuTMmvXm7Gjrms4uoRQuSvw7g")
         GMSPlacesClient.provideAPIKey("AIzaSyB2UrwI4WqdbWEW3dUPL7uRqK-EfFS_Mmo")
         
+        // if there is a logged in user then load the home view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: "Starter") as UIViewController
+        let navigationController = UINavigationController(rootViewController: homeVC)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = window {
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+
+        
         return true
     }
     

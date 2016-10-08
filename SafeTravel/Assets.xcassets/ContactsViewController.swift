@@ -26,10 +26,11 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //number of contacts in user if defined; else 0
+        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactCell
-        cell.contactImageView.setImageWithURL(NSURL(string: "http://www.2daysky.com/sharedContents/media/images/default.png"))
+        cell.contactImageView.setImageWith(NSURL(string: "http://www.2daysky.com/sharedContents/media/images/default.png") as! URL)
         
         return cell
     }
