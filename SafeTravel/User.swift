@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import CoreLocation
+import CoreLocation
 
 class User: NSObject {
     
@@ -15,7 +15,7 @@ class User: NSObject {
     var password: String?
     var name: String?
     var phoneNumber: String?
-    var currLocation: String?
+    var currLocation: CLLocation?
     var contactsArray: [NSObject]?
     
     init(email: String?, password: String?,

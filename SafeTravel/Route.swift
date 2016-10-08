@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class Route: NSObject {
     var estTime: String?
     let start: String?
-    let destination: String?
+    let destination: CLLocation?
     let path: String?
     
-    init(start: String, destination: String, estTime: String, path: String){
+    init(start: String, destination: CLLocation, estTime: String, path: String){
         self.start = start
         self.destination = destination
         self.estTime = estTime
