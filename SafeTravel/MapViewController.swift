@@ -24,6 +24,9 @@ class MapViewController: UIViewController {
     var selectedPin:MKPlacemark? = nil
 
     
+    var sourcePlacemark: MKPlacemark?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,6 +119,8 @@ extension MapViewController : CLLocationManagerDelegate {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegion(center: location.coordinate, span: span)
         mapView.setRegion(region, animated: true)
+        
+        sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -134,19 +139,51 @@ extension MapViewController: HandleMapSearch {
         annotation.title = placemark.name
         if let city = placemark.locality,
             let state = placemark.administrativeArea {
-            annotation.subtitle = city + state
+            annotation.subtitle = city + " " + state
         }
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        
+        // CALCULATE ETA
+        print("CALCULATE ETA")
+//        func ETARequest(destination:CLLocationCoordinate2D, user: UserType) {
+//            
+//        }
+        // Get current position
+//        let sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark!)
+        
+        //Destination location
+        //let destinationCoordinates = location.coordinate
+        //let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinates, addressDictionary: nil)
+        let destinationPlacemark = placemark
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        
+        // Create request
+        let request = MKDirectionsRequest()
+        request.source = sourceMapItem
+        request.destination = destinationMapItem
+        request.transportType = MKDirectionsTransportType.automobile
+        request.requestsAlternateRoutes = false
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            if let route = response?.routes.first {
+                print("Distance: \(route.distance), ETA: \(route.expectedTravelTime)")
+            } else {
+                print("Error!")
+            }
+        }
     }
 }
 
 extension MapViewController : MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+        print("FUNC MAPVIEW)")
         if annotation is MKUserLocation {
-            //return nil so map view draws "blue dot" for standard user location
+            //return nil so mamp view draws "blue dot" for standard user location
+            print("nil")
             return nil
         }
         let reuseId = "pin"
@@ -154,10 +191,10 @@ extension MapViewController : MKMapViewDelegate {
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.pinTintColor = UIColor.orange
         pinView?.canShowCallout = true
-        let smallSquare = CGSize(width: 30, height: 30)
-        let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+        //let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         button.setBackgroundImage(UIImage(named: "car"), for: .normal)
-        button.addTarget(self, action: "getDirections", for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapViewController.getDirections), for: .touchUpInside)
         pinView?.leftCalloutAccessoryView = button
         return pinView
     }
