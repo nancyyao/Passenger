@@ -11,19 +11,10 @@ import Firebase
 import GoogleMaps
 
 class LoginViewController: UIViewController {
+    var user: User!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // Alert for errors logging in or signing up
     private func alert(title: String, message: String) {
@@ -48,12 +39,10 @@ class LoginViewController: UIViewController {
             if (error != nil) {
                 print("Error with signUp:", error)
                 self.alert(title: "Alert:", message: "Error signing up, please try again")
-                print("User signed up successfully")
-                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             } else {
                 print("User signed up successfully")
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
-                //do something with user
+                let user = User.init(email: email, password: password, name: nil, phoneNumber: nil, currLocation: nil, contactsArray: [])
             }
         }
     }

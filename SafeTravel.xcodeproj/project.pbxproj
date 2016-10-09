@@ -19,6 +19,7 @@
 		B96B36421DA9280F00184C4D /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36411DA9280F00184C4D /* ContactsViewController.swift */; };
 		B96B36441DA97ACC00184C4D /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36431DA97ACC00184C4D /* MessageComposer.swift */; };
 		B96B36481DA98E8000184C4D /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36471DA98E8000184C4D /* LocationSearchTable.swift */; };
+		B96B364A1DA9C14400184C4D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36491DA9C14400184C4D /* SignUpViewController.swift */; };
 		B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */; };
 		B9F161331DA905FE00322ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F161311DA905FE00322ED6 /* Main.storyboard */; };
 		B9F161351DA905FE00322ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F161341DA905FE00322ED6 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		B96B36411DA9280F00184C4D /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = Assets.xcassets/ContactsViewController.swift; sourceTree = "<group>"; };
 		B96B36431DA97ACC00184C4D /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		B96B36471DA98E8000184C4D /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		B96B36491DA9C14400184C4D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B9F1612A1DA905FE00322ED6 /* SafeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F161321DA905FE00322ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */,
 				B96B36411DA9280F00184C4D /* ContactsViewController.swift */,
 				B96B36471DA98E8000184C4D /* LocationSearchTable.swift */,
+				B96B36491DA9C14400184C4D /* SignUpViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				909B7B461DA90B61004D6C94 /* MapViewController.swift in Sources */,
 				84339B181DA9121F00CA3679 /* Route.swift in Sources */,
 				B96B36481DA98E8000184C4D /* LocationSearchTable.swift in Sources */,
+				B96B364A1DA9C14400184C4D /* SignUpViewController.swift in Sources */,
 				84339B161DA911F500CA3679 /* User.swift in Sources */,
 				B96B36421DA9280F00184C4D /* ContactsViewController.swift in Sources */,
 				B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */,

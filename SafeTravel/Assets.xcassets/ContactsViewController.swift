@@ -8,10 +8,13 @@
 
 import UIKit
 import AFNetworking
+import Firebase
 
 class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    let currentUser = FIRAuth.auth()?.currentUser
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +28,16 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (currentUser != nil) {
+            return user.contactsArray!.count
+        }
         //number of contacts in user if defined; else 0
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactCell
         cell.contactImageView.setImageWith(NSURL(string: "http://www.2daysky.com/sharedContents/media/images/default.png") as! URL)
-        
+        cell.contactPhoneLabel.text = user.phoneNumber
         return cell
     }
     //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
