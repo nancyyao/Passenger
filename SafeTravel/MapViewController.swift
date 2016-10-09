@@ -24,6 +24,9 @@ class MapViewController: UIViewController {
     var selectedPin:MKPlacemark? = nil
 
     
+    var sourcePlacemark: MKPlacemark?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,6 +119,8 @@ extension MapViewController : CLLocationManagerDelegate {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegion(center: location.coordinate, span: span)
         mapView.setRegion(region, animated: true)
+        
+        sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -140,6 +145,36 @@ extension MapViewController: HandleMapSearch {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        
+        // CALCULATE ETA
+        print("CALCULATE ETA")
+//        func ETARequest(destination:CLLocationCoordinate2D, user: UserType) {
+//            
+//        }
+        // Get current position
+//        let sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark!)
+        
+        //Destination location
+        //let destinationCoordinates = location.coordinate
+        //let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinates, addressDictionary: nil)
+        let destinationPlacemark = placemark
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        
+        // Create request
+        let request = MKDirectionsRequest()
+        request.source = sourceMapItem
+        request.destination = destinationMapItem
+        request.transportType = MKDirectionsTransportType.automobile
+        request.requestsAlternateRoutes = false
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            if let route = response?.routes.first {
+                print("Distance: \(route.distance), ETA: \(route.expectedTravelTime)")
+            } else {
+                print("Error!")
+            }
+        }
     }
 }
 
