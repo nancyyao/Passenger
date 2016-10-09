@@ -134,7 +134,7 @@ extension MapViewController: HandleMapSearch {
         annotation.title = placemark.name
         if let city = placemark.locality,
             let state = placemark.administrativeArea {
-            annotation.subtitle = city + state
+            annotation.subtitle = city + " " + state
         }
         mapView.addAnnotation(annotation)
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -145,8 +145,10 @@ extension MapViewController: HandleMapSearch {
 
 extension MapViewController : MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+        print("FUNC MAPVIEW)")
         if annotation is MKUserLocation {
-            //return nil so map view draws "blue dot" for standard user location
+            //return nil so mamp view draws "blue dot" for standard user location
+            print("nil")
             return nil
         }
         let reuseId = "pin"
@@ -154,10 +156,10 @@ extension MapViewController : MKMapViewDelegate {
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView?.pinTintColor = UIColor.orange
         pinView?.canShowCallout = true
-        let smallSquare = CGSize(width: 30, height: 30)
-        let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+        //let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         button.setBackgroundImage(UIImage(named: "car"), for: .normal)
-        button.addTarget(self, action: "getDirections", for: .touchUpInside)
+        button.addTarget(self, action: #selector(MapViewController.getDirections), for: .touchUpInside)
         pinView?.leftCalloutAccessoryView = button
         return pinView
     }
