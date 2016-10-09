@@ -93,6 +93,7 @@ class MapViewController: UIViewController {
     }
     
     //Directions
+    
     func getDirections(){
         if let selectedPin = selectedPin {
             let mapItem = MKMapItem(placemark: selectedPin)
