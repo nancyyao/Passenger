@@ -13,6 +13,7 @@
 		84339B181DA9121F00CA3679 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84339B171DA9121F00CA3679 /* Route.swift */; };
 		84339B1B1DA92FBC00CA3679 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84339B1A1DA92FBC00CA3679 /* ContactCell.swift */; };
 		909B7B461DA90B61004D6C94 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909B7B451DA90B61004D6C94 /* MapViewController.swift */; };
+		90CC37041DA9E5CC0032C70B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC37031DA9E5CC0032C70B /* TimerViewController.swift */; };
 		9BC0761EBECA7D6E2D26435D /* Pods_SafeTravelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */; };
 		A8A94ECEFA4BC104AE554EBF /* Pods_SafeTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D759A5085ECD0D9F73C4C310 /* Pods_SafeTravel.framework */; };
 		B969EF4E1DA9196900AC62FC /* SampleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */; };
@@ -57,6 +58,7 @@
 		84339B1A1DA92FBC00CA3679 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		909B7B451DA90B61004D6C94 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		90CC37031DA9E5CC0032C70B /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMapViewController.swift; sourceTree = "<group>"; };
 		B96B36411DA9280F00184C4D /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = Assets.xcassets/ContactsViewController.swift; sourceTree = "<group>"; };
 		B96B36431DA97ACC00184C4D /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F1615C1DA9061F00322ED6 /* LoginViewController.swift */,
+				90CC37031DA9E5CC0032C70B /* TimerViewController.swift */,
 				909B7B451DA90B61004D6C94 /* MapViewController.swift */,
 				B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */,
 				B96B36411DA9280F00184C4D /* ContactsViewController.swift */,
@@ -506,6 +509,7 @@
 				84339B161DA911F500CA3679 /* User.swift in Sources */,
 				B96B36421DA9280F00184C4D /* ContactsViewController.swift in Sources */,
 				B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */,
+				90CC37041DA9E5CC0032C70B /* TimerViewController.swift in Sources */,
 				B969EF4E1DA9196900AC62FC /* SampleMapViewController.swift in Sources */,
 				B96B36441DA97ACC00184C4D /* MessageComposer.swift in Sources */,
 			);
