@@ -22,33 +22,39 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     var selectedPin:MKPlacemark? = nil
-
+    
+    let startButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 110, y: UIScreen.main.bounds.height - 100, width: 100, height: 80))
     
     var sourcePlacemark: MKPlacemark?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
         // Logout Button
-        let logoutButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 40))
+        let logoutButton = UIButton(frame: CGRect(x: 20, y: UIScreen.main.bounds.height - 50, width: 80, height: 40))
         logoutButton.setTitle("Log Out", for: .normal)
-        logoutButton.backgroundColor = UIColor.blue
+        logoutButton.backgroundColor = UIColor.init(white: 1.0, alpha: 0.8)
+        logoutButton.setTitleColor(UIColor.gray, for: .normal)
         logoutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         self.view.addSubview(logoutButton)
         
-        // TEXT MESSAGES
-        //Text/Start trip Button
-        let textButton = UIButton(frame: CGRect(x: 200, y: 500, width: 100, height: 100))
-        textButton.setTitle("Send Message", for: .normal)
-        textButton.backgroundColor = UIColor.green
-        textButton.addTarget(self, action: #selector(onSendText), for: .touchUpInside)
-        self.view.addSubview(textButton)
+        // Time/Start route Button
+        startButton.backgroundColor = UIColor.blue
+        startButton.addTarget(self, action: #selector(onStartRoute), for: .touchUpInside)
+        self.view.addSubview(startButton)
+        startButton.isHidden = true
+        
+        // Contacts Button
+        let contactsButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 100, y: UIScreen.main.bounds.height - 50, width: 80, height: 40))
+        contactsButton.backgroundColor = UIColor.init(white: 1.0, alpha: 0.8)
+        contactsButton.setTitleColor(UIColor.gray, for: .normal)
+        contactsButton.setTitle("Contacts", for: .normal)
+        contactsButton.addTarget(self, action: #selector(toContacts), for: .touchUpInside)
+        self.view.addSubview(contactsButton)
         
         //Search function
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
@@ -70,10 +76,29 @@ class MapViewController: UIViewController {
         
     }
     
+    // Contacts Segue
+    func toContacts(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "ContactsSegue", sender: nil)
+    }
     
-    // SEND TEXT MESSAGES
-    func onSendText(_ sender:UIButton) {
-        // Make sure the device can send text messages
+    // Sign out
+    func signOut(_ sender: UIButton) {
+        try! FIRAuth.auth()!.signOut()
+        self.performSegue(withIdentifier: "LogOut", sender: nil)
+    }
+    
+    //Directions
+    func getDirections(){
+        if let selectedPin = selectedPin {
+            let mapItem = MKMapItem(placemark: selectedPin)
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+            mapItem.openInMaps(launchOptions: launchOptions)
+        }
+    }
+    
+    //Start Route
+    func onStartRoute(_ sender: UIButton) {
+        //Send Text
         if (messageComposer.canSendText()) {
             // Obtain a configured MFMessageComposeViewController
             let messageComposeVC = messageComposer.configuredMessageComposeViewController()
@@ -87,33 +112,29 @@ class MapViewController: UIViewController {
             let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
             errorAlert.show()
         }
+        
+        
+        self.performSegue(withIdentifier: "TimerSegue", sender: nil)
+        startButton.isHidden = true
     }
     
-    // Sign out
-    func signOut(_ sender: UIButton) {
-        try! FIRAuth.auth()!.signOut()
-        self.performSegue(withIdentifier: "LogOut", sender: nil)
-    }
-    
-    //Directions
-    
-    func getDirections(){
-        if let selectedPin = selectedPin {
-            let mapItem = MKMapItem(placemark: selectedPin)
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-            mapItem.openInMaps(launchOptions: launchOptions)
-        }
+    // Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! CountdownViewController
+        vc.addressLabel.text = "Address"
+        vc.etaLabel.text = "4:30pm"
+        vc.countdownLabel.text = "55:55"
     }
 }
 
+
+
 extension MapViewController : CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.requestLocation()
         }
     }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -122,12 +143,11 @@ extension MapViewController : CLLocationManagerDelegate {
         
         sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
     }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: \(error)")
     }
-    
 }
+
 extension MapViewController: HandleMapSearch {
     func dropPinZoomIn(_ placemark:MKPlacemark){
         // cache the pin
@@ -147,17 +167,9 @@ extension MapViewController: HandleMapSearch {
         mapView.setRegion(region, animated: true)
         
         // CALCULATE ETA
-        print("CALCULATE ETA")
-//        func ETARequest(destination:CLLocationCoordinate2D, user: UserType) {
-//            
-//        }
-        // Get current position
-//        let sourcePlacemark = MKPlacemark(coordinate: locations.last!.coordinate, addressDictionary: nil)
         let sourceMapItem = MKMapItem(placemark: sourcePlacemark!)
         
         //Destination location
-        //let destinationCoordinates = location.coordinate
-        //let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinates, addressDictionary: nil)
         let destinationPlacemark = placemark
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
         
@@ -171,6 +183,9 @@ extension MapViewController: HandleMapSearch {
         directions.calculate { response, error in
             if let route = response?.routes.first {
                 print("Distance: \(route.distance), ETA: \(route.expectedTravelTime)")
+                let mins = round(route.expectedTravelTime/60)
+                self.startButton.setTitle("\(mins) mins.\nGo!", for: .normal)
+                self.startButton.isHidden = false
             } else {
                 print("Error!")
             }

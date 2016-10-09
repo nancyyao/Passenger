@@ -49,12 +49,5 @@ class ViewController: UIViewController {
         countingLabel.text = String(timeString(time: TimeInterval(SwiftCounter)))
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    
 }
 

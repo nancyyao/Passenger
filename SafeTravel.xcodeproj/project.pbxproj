@@ -223,11 +223,11 @@
 				B9F1615C1DA9061F00322ED6 /* LoginViewController.swift */,
 				90CC37031DA9E5CC0032C70B /* TimerViewController.swift */,
 				909B7B451DA90B61004D6C94 /* MapViewController.swift */,
-				B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */,
+				B96B364D1DA9F40E00184C4D /* CountdownViewController.swift */,
 				B96B36411DA9280F00184C4D /* ContactsViewController.swift */,
 				B96B36471DA98E8000184C4D /* LocationSearchTable.swift */,
 				B96B364B1DA9DB4600184C4D /* SearchContactsViewController.swift */,
-				B96B364D1DA9F40E00184C4D /* CountdownViewController.swift */,
+				B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

@@ -14,13 +14,14 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     let currentUser = FIRAuth.auth()?.currentUser
-    var user: User!
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        self.navigationController?.navigationBar.topItem?.title = "Contacts"
 
     }
     override func didReceiveMemoryWarning() {
@@ -28,22 +29,20 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (currentUser != nil) {
-            return user.contactsArray!.count
+        if let count = (user?.contactsArray!)?.count {
+            return count
+        } else {
+            return 0
         }
-        //number of contacts in user if defined; else 0
-        return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactCell
         cell.contactImageView.setImageWith(NSURL(string: "http://www.2daysky.com/sharedContents/media/images/default.png") as! URL)
-        cell.contactPhoneLabel.text = user.phoneNumber
+        cell.contactPhoneLabel.text = user?.phoneNumber
         return cell
     }
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //    code
-   // }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 90
  }
 }
