@@ -13,10 +13,10 @@ class Twilio {
     static let SID = "ACf3b4d0bce2d8d8c024445a775c4331f5"
     static let Secret = "xAFsAE51mX6HUsYe4ivgbxnkLrCiB630"
     
-    let fromNumber = "4152226666"
-    let toNumber = "2488605975"
-    let messageDepart = "Leaving to my destination!"
-    let messageArrive = "Arrived at my destination!"
+    static let fromNumber = "2483098080"
+    static let toNumber = "2488605975"
+    static let messageDepart = "Leaving to my destination!"
+    static let messageArrive = "Arrived at my destination!"
     
     
     class Service {
