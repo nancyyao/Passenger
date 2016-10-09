@@ -23,4 +23,4 @@ In Progress:
 ## APIs
 
 - Firebase
-- Google Maps
+- Apple MapKit
