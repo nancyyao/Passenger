@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     @IBAction func startButton(_ sender: AnyObject) {
         SwiftTimer = Timer.scheduledTimer(timeInterval: 1, target:self, selector: #selector(ViewController.updateCounter), userInfo: nil, repeats: true)
-        
     }
     
     @IBAction func pauseButton(_ sender: AnyObject) {
@@ -35,17 +34,26 @@ class ViewController: UIViewController {
         countingLabel.text = String(SwiftCounter)
     }
     
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        countingLabel.text = String(SwiftCounter)
+        countingLabel.text = String(timeString(time: TimeInterval(SwiftCounter)))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     
 }
