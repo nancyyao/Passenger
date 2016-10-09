@@ -8,27 +8,35 @@
 
 import UIKit
 import CoreLocation
+import Mantle
 
-class User: NSObject {
+class User: MTLModel {
     
-    var email: String?
-    var password: String?
     var name: String?
     var phoneNumber: String?
-    var currLocation: CLLocation?
     var contactsArray: [NSObject]?
     
-    init(email: String?, password: String?,
-         name: String?, phoneNumber: String?,
-         currLocation: String?, contactsArray: [NSObject]?){
-        self.email = email
-        self.password = password
+    init(name: String?, phoneNumber: String?,
+        contactsArray: [NSObject]?){
         self.name = name
         self.phoneNumber = phoneNumber
         self.contactsArray = contactsArray
-        
+        super.init()
     }
     
+    required init!(coder: NSCoder!) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    required init(dictionary dictionaryValue: [AnyHashable : Any]!) throws {
+        try! super.init(dictionary: dictionaryValue)
+    }
     
-    
+}
+
+extension User: MTLJSONSerializing {
+    static func jsonKeyPathsByPropertyKey() -> [AnyHashable : Any]! {
+        return ["name": "name",
+                "phoneNumber": "phone_number"]
+    }
 }

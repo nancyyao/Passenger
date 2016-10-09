@@ -9,12 +9,21 @@
 import UIKit
 import Firebase
 import GoogleMaps
+import Mantle
+import FirebaseDatabase
+
 
 class LoginViewController: UIViewController {
     var user: User!
     
+    lazy var firebase: FIRDatabase = {
+        return FIRDatabase.database()
+    }()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     
     // Alert for errors logging in or signing up
     private func alert(title: String, message: String) {
@@ -35,15 +44,19 @@ class LoginViewController: UIViewController {
     
     // Sign up
     func signUp(email: String, password: String) {
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
-            if (error != nil) {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (firebaseUser, error) in
+            guard let firebaseUser = firebaseUser else {
                 print("Error with signUp:", error)
                 self.alert(title: "Alert:", message: "Error signing up, please try again")
-            } else {
-                print("User signed up successfully")
-                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
-                let user = User.init(email: email, password: password, name: nil, phoneNumber: nil, currLocation: nil, contactsArray: [])
+                return
             }
+            print("User signed up successfully")
+            self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+            let user = User.init(name: self.nameTextField.text, phoneNumber: self.phoneTextField.text, contactsArray: [])
+            let json = try! MTLJSONAdapter.jsonDictionary(fromModel: user)
+            self.firebase.reference(withPath: "/users").child(firebaseUser.uid).setValue(json, withCompletionBlock: { (error, ref) in
+                print("user \(user) ref \(ref)")
+            })
         }
     }
     @IBAction func onSignUpButton(_ sender: UIButton) {
@@ -60,6 +73,10 @@ class LoginViewController: UIViewController {
                 self.alert(title: "Alert:", message: "Error logging in, please try again")
             } else {
                 print("User logged in successfully")
+                let json = try! MTLJSONAdapter.jsonDictionary(fromModel: user as! MTLJSONSerializing!)
+//                self.firebase.reference(withPath: "/users").parent(firebase
+                
+                
                 self.performSegue(withIdentifier: "LoginSegue", sender: nil)
                 //do something with user
             }
