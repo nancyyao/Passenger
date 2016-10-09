@@ -16,13 +16,12 @@
 		90CC37041DA9E5CC0032C70B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CC37031DA9E5CC0032C70B /* TimerViewController.swift */; };
 		9BC0761EBECA7D6E2D26435D /* Pods_SafeTravelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */; };
 		A8A94ECEFA4BC104AE554EBF /* Pods_SafeTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D759A5085ECD0D9F73C4C310 /* Pods_SafeTravel.framework */; };
-		B969EF4E1DA9196900AC62FC /* SampleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */; };
 		B96B36421DA9280F00184C4D /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36411DA9280F00184C4D /* ContactsViewController.swift */; };
 		B96B36441DA97ACC00184C4D /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36431DA97ACC00184C4D /* MessageComposer.swift */; };
 		B96B36481DA98E8000184C4D /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36471DA98E8000184C4D /* LocationSearchTable.swift */; };
-		B96B364C1DA9DB4600184C4D /* SearchContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B364B1DA9DB4600184C4D /* SearchContactsViewController.swift */; };
 		B96B364E1DA9F40E00184C4D /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B364D1DA9F40E00184C4D /* CountdownViewController.swift */; };
 		B96B36501DA9F68B00184C4D /* TwilioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B364F1DA9F68B00184C4D /* TwilioService.swift */; };
+		B96B36541DAA1CE200184C4D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96B36531DAA1CE200184C4D /* SignUpViewController.swift */; };
 		B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */; };
 		B9F161331DA905FE00322ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F161311DA905FE00322ED6 /* Main.storyboard */; };
 		B9F161351DA905FE00322ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F161341DA905FE00322ED6 /* Assets.xcassets */; };
@@ -61,13 +60,12 @@
 		8BB23D94A7F7223DD0E653CC /* Pods_SafeTravelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeTravelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		909B7B451DA90B61004D6C94 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		90CC37031DA9E5CC0032C70B /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMapViewController.swift; sourceTree = "<group>"; };
 		B96B36411DA9280F00184C4D /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = Assets.xcassets/ContactsViewController.swift; sourceTree = "<group>"; };
 		B96B36431DA97ACC00184C4D /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		B96B36471DA98E8000184C4D /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
-		B96B364B1DA9DB4600184C4D /* SearchContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContactsViewController.swift; sourceTree = "<group>"; };
 		B96B364D1DA9F40E00184C4D /* CountdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		B96B364F1DA9F68B00184C4D /* TwilioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioService.swift; sourceTree = "<group>"; };
+		B96B36531DAA1CE200184C4D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B9F1612A1DA905FE00322ED6 /* SafeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F1612D1DA905FE00322ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F161321DA905FE00322ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -221,13 +219,12 @@
 			isa = PBXGroup;
 			children = (
 				B9F1615C1DA9061F00322ED6 /* LoginViewController.swift */,
-				90CC37031DA9E5CC0032C70B /* TimerViewController.swift */,
 				909B7B451DA90B61004D6C94 /* MapViewController.swift */,
 				B96B364D1DA9F40E00184C4D /* CountdownViewController.swift */,
 				B96B36411DA9280F00184C4D /* ContactsViewController.swift */,
 				B96B36471DA98E8000184C4D /* LocationSearchTable.swift */,
-				B96B364B1DA9DB4600184C4D /* SearchContactsViewController.swift */,
-				B969EF4D1DA9196900AC62FC /* SampleMapViewController.swift */,
+				B96B36531DAA1CE200184C4D /* SignUpViewController.swift */,
+				90CC37031DA9E5CC0032C70B /* TimerViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -512,13 +509,12 @@
 				B96B36501DA9F68B00184C4D /* TwilioService.swift in Sources */,
 				909B7B461DA90B61004D6C94 /* MapViewController.swift in Sources */,
 				84339B181DA9121F00CA3679 /* Route.swift in Sources */,
-				B96B364C1DA9DB4600184C4D /* SearchContactsViewController.swift in Sources */,
 				B96B36481DA98E8000184C4D /* LocationSearchTable.swift in Sources */,
 				84339B161DA911F500CA3679 /* User.swift in Sources */,
+				B96B36541DAA1CE200184C4D /* SignUpViewController.swift in Sources */,
 				B96B36421DA9280F00184C4D /* ContactsViewController.swift in Sources */,
 				B9F1612E1DA905FE00322ED6 /* AppDelegate.swift in Sources */,
 				90CC37041DA9E5CC0032C70B /* TimerViewController.swift in Sources */,
-				B969EF4E1DA9196900AC62FC /* SampleMapViewController.swift in Sources */,
 				B96B36441DA97ACC00184C4D /* MessageComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

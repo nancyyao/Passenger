@@ -13,53 +13,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SafeTravel/LoginViewController.swift"
-            timestampString = "497670118.964012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "signUp(email:password:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SafeTravel.LoginViewController.(signUp (email : Swift.String, password : Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "SafeTravel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nancy/Desktop/SafeTravel/SafeTravel/LoginViewController.swift"
-                  timestampString = "497685488.252323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "1564">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SafeTravel.LoginViewController.(signUp (email : Swift.String, password : Swift.String) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "SafeTravel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nancy/Desktop/SafeTravel/SafeTravel/LoginViewController.swift"
-                  timestampString = "497685488.254181"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

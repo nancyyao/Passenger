@@ -22,8 +22,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
     
     // Alert for errors logging in or signing up
     private func alert(title: String, message: String) {
@@ -42,30 +40,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // Sign up
-    func signUp(email: String, password: String) {
-        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (firebaseUser, error) in
-            guard let firebaseUser = firebaseUser else {
-                print("Error with signUp:", error)
-                self.alert(title: "Alert:", message: "Error signing up, please try again")
-                return
-            }
-            print("User signed up successfully")
-            self.performSegue(withIdentifier: "LoginSegue", sender: nil)
-            let user = User.init(name: self.nameTextField.text, phoneNumber: self.phoneTextField.text, contactsArray: [])
-            let json = try! MTLJSONAdapter.jsonDictionary(fromModel: user)
-            self.firebase.reference(withPath: "/users").child(firebaseUser.uid).setValue(json, withCompletionBlock: { (error, ref) in
-                print("user \(user) ref \(ref)")
-            })
-        }
-    }
-    @IBAction func onSignUpButton(_ sender: UIButton) {
-        print("hit sign up button")
-        signUp(email: emailTextField.text!, password: passwordTextField.text!)
-    }
-    
-    
-    // Log in
+       // Log in
     func logIn(email: String, password: String) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             if (error != nil) {
@@ -73,11 +48,18 @@ class LoginViewController: UIViewController {
                 self.alert(title: "Alert:", message: "Error logging in, please try again")
             } else {
                 print("User logged in successfully")
-                let json = try! MTLJSONAdapter.jsonDictionary(fromModel: user as! MTLJSONSerializing!)
+                Twilio.Service.send(to: Twilio.toNumber, from: Twilio.fromNumber, message: Twilio.messageArrive, completed: { (msg: String?, error: Error?) in
+                    if (error != nil) {
+                        
+                    } else {
+                        print("error: \(error)")
+                    }
+                })
+//                let json = try! MTLJSONAdapter.jsonDictionary(fromModel: user as! MTLJSONSerializing!)
 //                self.firebase.reference(withPath: "/users").parent(firebase
                 
                 
-                self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+                self.performSegue(withIdentifier: "LoginSegue2", sender: nil)
                 //do something with user
             }
         }
@@ -86,11 +68,4 @@ class LoginViewController: UIViewController {
         print("hit log in button")
         logIn(email: emailTextField.text!, password: passwordTextField.text!)
     }
-    
-    // Sign out
-    func signOut() {
-        try! FIRAuth.auth()!.signOut()
-        self.performSegue(withIdentifier: "LogOut", sender: nil)
-    }
-    
 }

@@ -15,15 +15,15 @@ protocol HandleMapSearch: class {
 }
 
 class MapViewController: UIViewController {
-    let messageComposer = MessageComposer()
     
     let locationManager = CLLocationManager()
     var resultSearchController:UISearchController? = nil
     
     @IBOutlet weak var mapView: MKMapView!
     var selectedPin:MKPlacemark? = nil
+    var minutes:Int!
     
-    let startButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 110, y: UIScreen.main.bounds.height - 100, width: 100, height: 80))
+    let startButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 110, y: UIScreen.main.bounds.height - 150, width: 100, height: 70))
     
     var sourcePlacemark: MKPlacemark?
     
@@ -98,36 +98,26 @@ class MapViewController: UIViewController {
     
     //Start Route
     func onStartRoute(_ sender: UIButton) {
-        //Send Text
-        if (messageComposer.canSendText()) {
-            // Obtain a configured MFMessageComposeViewController
-            let messageComposeVC = messageComposer.configuredMessageComposeViewController()
-            
-            // Present the configured MFMessageComposeViewController instance
-            // Note that the dismissal of the VC will be handled by the messageComposer instance,
-            // since it implements the appropriate delegate call-back
-            present(messageComposeVC, animated: true, completion: nil)
-        } else {
-            // Let the user know if his/her device isn't able to send text messages
-            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
-            errorAlert.show()
-        }
-        
-        
         self.performSegue(withIdentifier: "TimerSegue", sender: nil)
         startButton.isHidden = true
     }
     
+    
     // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! CountdownViewController
-        vc.addressLabel.text = "Address"
-        vc.etaLabel.text = "4:30pm"
-        vc.countdownLabel.text = "55:55"
+        let hours = Int(self.minutes!/60)
+        var mins: Int?
+        if self.minutes! > 60 {
+            mins = minutes - 60*hours
+        }
+        if let vc = segue.destination as? CountdownViewController {
+            if let name = selectedPin?.name {
+                vc.address = name as String
+            }
+            vc.eta = "\(hours)h, \(mins!)m"
+        }
     }
 }
-
-
 
 extension MapViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -182,9 +172,11 @@ extension MapViewController: HandleMapSearch {
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             if let route = response?.routes.first {
-                print("Distance: \(route.distance), ETA: \(route.expectedTravelTime)")
-                let mins = round(route.expectedTravelTime/60)
-                self.startButton.setTitle("\(mins) mins.\nGo!", for: .normal)
+                let sec = route.expectedTravelTime
+                print("Distance: \(route.distance), ETA: \(sec)")
+                let doub = sec/60
+                self.minutes =  Int(doub)
+                self.startButton.setTitle("\(self.minutes!) mins", for: .normal)
                 self.startButton.isHidden = false
             } else {
                 print("Error!")
